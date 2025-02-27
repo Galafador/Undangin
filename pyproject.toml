@@ -1,0 +1,19 @@
+[project]
+name = "undangin"
+version = "0.1.0"
+description = "Web Wedding Invitation Builder"
+dependencies = [
+    "os",
+    "shutil",
+    "cs50",
+    "flask",
+    "flask_session",
+    "functools"
+    "werkzeug.security",
+    "werkzeug.utils",
+    "datetime",
+]
+
+[build-system]
+requires = ["flit_core<4"]
+build-backend = "flit_core.buildapi"

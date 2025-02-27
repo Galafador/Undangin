@@ -1,0 +1,61 @@
+{% extends "layoutAuthed.html" %}
+
+{% block title %}
+    Send Invitation
+{% endblock %}
+
+{% block ActiveSend %}Active{% endblock %}
+{% block ActiveAttendees %}{% endblock %}
+
+{% block main %}
+    <div class="container mt-5">
+        <h2>Silahkan Masukan Nama Tamu</h2>
+        <form method="POST" action="/send/">
+            <div class="form-group">
+                <label for="names">Gunakan baris baru (↵) untuk memisahkan nama yang akan Anda undang.</label>
+                <textarea class="form-control" id="names" name="names" cols="30" rows="5" placeholder="Nama Tamu"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary my-2">Submit</button>
+        </form>
+    </div>
+
+    <h2 class="mt-5">Contacts</h2>
+    <div style="overflow-y: scroll;" class="d-flex flex-column w-100 h-100 justify-content-start mt-2">
+        <table class="table table-striped text-center">
+            <tr>
+                <th>Nama</th>
+                <th colspan="2" class="col-md-3" style="max-width: 100px;">Opsi</th>
+            </tr>
+            {% for result in results %}
+            <tr>
+                <td>{{ result.name }}</td>
+                <td>
+                    <button class="btn btn-secondary copy-btn" data-link="{{ result.link }}">Copy Link</button>
+                </td>
+                <td><a href="/delete_contact/{{ result.id }}" class="btn btn-danger" data-id="{{ result.id }}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
+
+{% block additionalscript %}
+<script>
+    $(document).ready(function() {
+        $('.copy-btn').click(function() {
+            var link = $(this).data('link');
+            var tempInput = document.createElement('input');
+            tempInput.style.position = 'absolute';
+            tempInput.style.left = '-9999px';
+            tempInput.value = link;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            // Show a confirmation message (optional)
+            alert('Link copied to clipboard: ' + link);
+        });
+    });
+</script>
+{% endblock %}

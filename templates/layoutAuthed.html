@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="/static/styles.css">
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+  <main>
+    <div class="Content">
+      <div class="Sidebar">
+        <div class="Top">
+          <a href="/" class="LogoWithText d-flex justify-content-center align-items-center px-4 my-1">
+            <div class="Logo">
+              <img src="/static/logo.png" style="width: 30px; height: 18.382px; flex-shrink: 0;" alt="Logo">
+            </div>
+            <p>Undangin</p>
+          </a>
+        </div>
+        <div class="main">
+        <div class="Nav">
+          {% if session["user_id"] and session["role"] == 'admin' %}
+          <a href="/create" class="NavItem {% block ActiveCreate %}{% endblock %} d-flex align-items-center">
+            <div class="Inner d-flex py-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7.50002 10.8333H12.5M10 8.33333L10 13.3333M14.1667 17.5H5.83335C4.91288 17.5 4.16669 16.7538 4.16669 15.8333V4.16667C4.16669 3.24619 4.91288 2.5 5.83335 2.5H10.4882C10.7092 2.5 10.9212 2.5878 11.0774 2.74408L15.5893 7.25592C15.7456 7.4122 15.8334 7.62416 15.8334 7.84518V15.8333C15.8334 16.7538 15.0872 17.5 14.1667 17.5Z" stroke="#171D1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p>Create Event</p>
+            </div>
+          </a>
+
+          <a href="/edit" class="NavItem {% block ActiveEdit %}{% endblock %} d-flex align-items-center">
+            <div class="Inner d-flex py-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M12.6935 4.36019L15.6398 7.30647M13.9435 3.11019C14.7571 2.2966 16.0762 2.2966 16.8898 3.11019C17.7034 3.92379 17.7034 5.24288 16.8898 6.05647L5.41673 17.5296H2.50006V14.5537L13.9435 3.11019Z" stroke="#081021" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p>Events List</p>
+            </div>
+          </a>
+
+          {% elif session["user_id"] and session["role"] == 'user' %}
+          <a href="/send" class="NavItem {% block ActiveSend %}{% endblock %} d-flex align-items-center">
+            <div class="Inner d-flex py-3">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.66667 5.83333V2.5M13.3333 5.83333V2.5M5.83333 9.16667H14.1667M4.16667 17.5H15.8333C16.7538 17.5 17.5 16.7538 17.5 15.8333V5.83333C17.5 4.91286 16.7538 4.16667 15.8333 4.16667H4.16667C3.24619 4.16667 2.5 4.91286 2.5 5.83333V15.8333C2.5 16.7538 3.24619 17.5 4.16667 17.5Z" stroke="#171D1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p>Send Invitation</p>
+            </div>
+          </a>
+
+          <a href="/attendees/" class="NavItem {% block ActiveAttendees %}{% endblock %} d-flex align-items-center">
+            <div class="Inner d-flex py-3">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 3.62848C10.6108 2.93646 11.5044 2.5 12.5 2.5C14.341 2.5 15.8333 3.99238 15.8333 5.83333C15.8333 7.67428 14.341 9.16667 12.5 9.16667C11.5044 9.16667 10.6108 8.7302 10 8.03819M12.5 17.5H2.5V16.6667C2.5 13.9052 4.73858 11.6667 7.5 11.6667C10.2614 11.6667 12.5 13.9052 12.5 16.6667V17.5ZM12.5 17.5H17.5V16.6667C17.5 13.9052 15.2614 11.6667 12.5 11.6667C11.5893 11.6667 10.7354 11.9102 10 12.3356M10.8333 5.83333C10.8333 7.67428 9.34095 9.16667 7.5 9.16667C5.65905 9.16667 4.16667 7.67428 4.16667 5.83333C4.16667 3.99238 5.65905 2.5 7.5 2.5C9.34095 2.5 10.8333 3.99238 10.8333 5.83333Z" stroke="#171D1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p>Attendees list</p>
+            </div>
+          </a>
+          {% else %}
+          {% endif %}
+        </div>
+
+        <div style="width: 230px; height: 0px; border: 1px #C4C6CF solid"></div>
+
+        <div class="Nav">
+          
+          <a href="/settings" class="NavItem d-flex align-items-center">
+            <div class="Inner d-flex py-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M8.60386 3.59776C8.95919 2.13408 11.0408 2.13408 11.3961 3.59776C11.6257 4.54327 12.709 4.99198 13.5398 4.48571C14.8261 3.70199 16.298 5.17392 15.5143 6.46015C15.008 7.29105 15.4567 8.37431 16.4022 8.60386C17.8659 8.95919 17.8659 11.0408 16.4022 11.3961C15.4567 11.6257 15.008 12.709 15.5143 13.5398C16.298 14.8261 14.8261 16.298 13.5398 15.5143C12.709 15.008 11.6257 15.4567 11.3961 16.4022C11.0408 17.8659 8.95919 17.8659 8.60386 16.4022C8.37431 15.4567 7.29105 15.008 6.46016 15.5143C5.17392 16.298 3.70199 14.8261 4.48571 13.5398C4.99198 12.709 4.54327 11.6257 3.59776 11.3961C2.13408 11.0408 2.13408 8.95919 3.59776 8.60386C4.54327 8.37431 4.99198 7.29105 4.48571 6.46015C3.70199 5.17392 5.17392 3.70199 6.46015 4.48571C7.29105 4.99198 8.37431 4.54327 8.60386 3.59776Z" stroke="#171D1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.5 10C12.5 11.3807 11.3807 12.5 10 12.5C8.61929 12.5 7.5 11.3807 7.5 10C7.5 8.61929 8.61929 7.5 10 7.5C11.3807 7.5 12.5 8.61929 12.5 10Z" stroke="#171D1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p>Settings</p>
+            </div>
+          </a>
+
+          <a href="/logout" class="NavItem d-flex align-items-center">
+            <div class="Inner d-flex py-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M9.16667 13.3333L5.83333 9.99999M5.83333 9.99999L9.16667 6.66666M5.83333 9.99999L17.5 9.99999M13.3333 13.3333V14.1667C13.3333 15.5474 12.214 16.6667 10.8333 16.6667H5C3.61929 16.6667 2.5 15.5474 2.5 14.1667V5.83333C2.5 4.45262 3.61929 3.33333 5 3.33333H10.8333C12.214 3.33333 13.3333 4.45262 13.3333 5.83333V6.66666" stroke="#171D1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p>Log Out</p>
+            </div>
+          </a>
+
+        </div>
+
+        <div style="width: 230px; height: 0px; border: 1px #C4C6CF solid"></div>
+        </div>
+        <div class="Footer my-3">
+          <div class="Inner">
+            <div class="Avatar">
+              <img style="width: 72px; height: 72px" src="/static/avatar.png"/>
+            </div>
+            <div class="TextGroup">
+              <p class="WelcomeBack">Welcome back 👋</p>
+              <p class="UserName">{{ session["username"] }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="MainContent d-flex flex-column align-self-stretch align-items-center justify-content-center p-3">
+        {% if get_flashed_messages() %}
+        <header>
+            <div class="alert alert-primary mb-3 text-center" role="alert">
+                {{ get_flashed_messages() | join(" ") }}
+            </div>
+        </header>
+        {% endif %}
+        
+        {% block main %}{% endblock %}
+      </div>
+
+    </div>
+  </main>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  {% block additionalscript %}{% endblock %}
+  
+</body>
+</html>

@@ -1,0 +1,1271 @@
+/* Define custom fonts */
+@font-face {
+    font-family: "Qene-G-Regular";
+    src: url('/static/fonts/Qene-G-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Maytra";
+    src: url('/static/fonts/Maytra.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.urbanist-regular {
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+/* Custom Fonts End */
+
+body, html {
+    display: flex;
+    width: 100%;
+    min-width: 320px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background: #E0BFB8
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 0;
+    margin: 0;
+}
+
+.animatedStartY {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;  
+}
+
+.animatedStartY.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animatedBotY {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.animatedBotY.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animatedRightX {
+    opacity: 0;
+    transform: translateY(132px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.animatedRightX.active {
+    opacity: 1;
+    transform: translateY(32px);
+}
+
+.animatedLeftX {
+    opacity: 0;
+    transform: translateY(-132px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.animatedLeftX.active {
+    opacity: 1;
+    transform: translateY(-32px);
+}
+
+.FullWidth {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border-right: 2px #9D7609 solid;
+    border-left: 2px #9D7609 solid;
+}
+
+.LeftHalf {
+    position: -webkit-sticky;
+    position: sticky;
+    display: none;
+    padding-top: auto;
+    padding-bottom: auto;
+    top: 0;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: start;
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), var(--LeftHalfPhoto) lightgray 50% / cover no-repeat; 
+    min-width: calc(768 - 320);
+    max-width: calc(100vw - 500px);
+}
+
+.RightHalf {
+    flex: 1;
+}
+
+.LeftHalf.mobile {
+    display: none;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    flex-shrink: 0;
+}
+
+
+.LeftHalf.tablet {
+    display: none;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    flex-shrink: 0;
+}
+
+.LeftHalf.desktop {
+    display: flex;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    flex-shrink: 0;
+}
+
+.LeftContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex: 1 0 0;
+    align-self: stretch;
+    padding: 50px clamp(25px, calc((100vw - 768px) + 50px), 150px) 50px 50px;
+    background: rgba(255, 255, 255, 0.00);
+    backdrop-filter: blur(4px);
+}
+
+.Page1 {
+    display: flex;
+    height: 100vh;
+    min-width: 320px;
+    align-items: center;
+    align-self: stretch;
+    background: url(BG1.png) lightgray 50% / cover no-repeat;
+    border-right: 2px #9D7609 solid;
+    border-left: 2px #9D7609 solid;
+}
+
+.Container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    flex: 1 0 0;
+    align-self: stretch;
+    background: rgba(223, 217, 202, 0.01);
+    backdrop-filter: blur(2px);
+}
+
+.TheWeddingOf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.TheWeddingOf p {
+    color: #000;
+    font-family: Urbanist;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.32px;
+}
+
+.Initials {
+    display: flex;
+    width: 130px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.InitialsTop {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    position: relative;
+}
+
+.InitialsTop p {
+    color: #000;
+    font-family: Qene-G, sans-serif;
+    font-size: 128px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    margin-bottom: -55px;
+}
+
+.InitialsTop .Spacer {
+    height: 100px;
+    flex: 1 0 0;
+}
+
+.InitialsBottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-self: stretch;
+    position: relative;
+}
+
+.InitialsBottom p {
+    color: #000;
+    font-family: Qene-G, sans-serif;
+    font-size: 128px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    margin-top: -55px;
+}
+
+.InitialsBottom .Spacer {
+    height: 100px;
+    flex: 1 0 0;
+}
+
+.Page2 {
+    display: none;
+    height: 100vh;
+    min-width: 320px;
+    max-width: 767px;
+    align-items: center;
+    align-self: stretch;
+    background: url(BG2.png) lightgray 50% / cover no-repeat;
+}
+
+.Container2 {
+    display: flex;
+    padding: 50px 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    flex: 1 0 0;
+    align-self: stretch;
+    background: rgba(223, 217, 202, 0.01);
+    backdrop-filter: blur(2px);
+}
+
+.Name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.Name p {
+    color: var(--Color-Text-text-primary, #202020);
+    text-align: center;
+    font-family: Maytra;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.28px;
+}
+
+.Date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.Date p {
+    color: var(--Color-Text-text-primary, #202020);
+    font-family: Urbanist;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.32px;
+}
+
+.Page3 {
+    display: none;
+    min-width: 320px;
+    max-width: 767px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    background: url(BG3.png) lightgray 50% / cover no-repeat;
+}
+
+.Container3 {
+    display: flex;
+    padding: 100px 36px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    align-self: stretch;
+    background: rgba(223, 217, 202, 0.01);
+    backdrop-filter: blur(2px);
+}
+
+.Opening {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.Opening h1 {
+    align-self: stretch;
+    color: var(--Color-Text-text-primary, #202020);
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.Opening p {
+    color: var(--Color-Text-text-primary, #202020);
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 137.5% */
+}
+
+.TheBride {
+    background-color: rgba(0, 0, 255, 0);
+    display: flex;
+    width: 280px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.TheBride .PhotoAndTitle {
+    background: rgba(255, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+}
+
+.TheBride .PhotoAndTitle p {
+    transform: rotate(90deg) translateY(32px);
+    color: #202020;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    word-wrap:normal;
+    white-space: nowrap;
+}
+
+.TheBride .PhotoAndTitle .BridePhoto {
+    margin: 0;
+    padding: 0;
+    min-width: 170px;
+    min-height: 280px;
+    border-radius: 16px;
+    border: 2px solid #9D7609;
+    background: var(--BridePhoto) lightgray 50% / cover no-repeat;
+    box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.30);
+}
+
+.TheBride .BridesName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+}
+
+.TheBride .BridesName p {
+    color: #000;
+    text-align: center;
+    font-family: Maytra;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.BridesDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.BridesDetails p {
+    color: #000;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.BridesParents {
+    background-color: rgba(0, 0, 255, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 8px;
+}
+
+.BridesParents p {
+    background-color: rgba(255, 0, 0, 0);
+    color: #000;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+/**/
+
+.TheGroom {
+    background-color: rgba(0, 0, 255, 0);
+    display: flex;
+    width: 280px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.TheGroom .PhotoAndTitle {
+    background: rgba(255, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+}
+
+.TheGroom .PhotoAndTitle p {
+    transform: rotate(90deg) translateY(-32px);
+    color: #202020;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    word-wrap:normal;
+    white-space: nowrap;
+}
+
+.TheGroom .PhotoAndTitle .GroomPhoto {
+    margin: 0;
+    padding: 0;
+    min-width: 170px;
+    min-height: 280px;
+    border-radius: 16px;
+    border: 2px solid #9D7609;
+    background: var(--GroomPhoto) lightgray 50% / cover no-repeat;
+    box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.30);
+}
+
+.TheGroom .GroomsName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+}
+
+.TheGroom .GroomsName p {
+    color: #000;
+    text-align: center;
+    font-family: Maytra;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.GroomsDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.GroomsDetails p {
+    color: #000;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.GroomsParents {
+    background-color: rgba(0, 0, 255, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 8px;
+}
+
+.GroomsParents p {
+    background-color: rgba(255, 0, 0, 0);
+    color: #000;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.Page4 {
+    display: none;
+    min-width: 320px;
+    max-width: 767px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    background: url(BG1.png) lightgray 50% / cover no-repeat;
+}
+
+.Container4 {
+    display: flex;
+    padding: 50px 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    align-self: stretch;
+    background: rgba(223, 217, 202, 0.50);
+    backdrop-filter: blur(2px);
+}
+
+.AkadDay {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    border-radius: 32px 32px 0px 0px;
+    background: #FFF;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.65);
+}
+
+.PhotoAkadDay {
+    height: 400px;
+    align-self: stretch;
+    border-radius: 32px 32px 0px 0px;
+    background: var(--AkadPhoto) lightgray 50% / cover no-repeat;
+}
+
+.AkadDetailsContainer {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    padding: 24px 32px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border: 1px solid #F2C447;
+    background: #FFF;
+}
+
+.AkadDetailsContainer .AkadDetailsTitle {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(255, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    width: 80px;
+}
+
+.AkadDetailsContainer .AkadDetailsTitle h1 {
+    transform: rotate(-90deg);
+    color: #5E5E5E;
+    font-family: Urbanist;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.AkadDetailsContainer .AkadDetails {
+    background: rgba(0, 0, 255, 0);
+    display: flex;
+    padding: 0px 28px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+.AkadDetailsContainer .AkadDetails .AkadDate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.AkadDetailsContainer .AkadDetails .AkadDate p {
+    color: #000;
+    text-align: center;
+    font-family: Urbanist;
+    font-style: normal;
+    line-height: normal;
+}
+
+.AkadDetailsContainer .AkadDetails .AkadTime p {
+    color: #000;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.AkadDetailsContainer .AkadDetails .AkadLocationContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.AkadDetailsContainer .AkadDetails .AkadLocationContainer p {
+    color: #000;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.AkadDetailsContainer .AkadDetails .AkadLocationContainer .AkadLocation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    align-self: stretch;
+}
+
+.AkadDetailsContainer .AkadDetails .AkadLocationContainer .AkadLocation p {
+    align-self: stretch;
+    color: #000;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+/**/
+
+
+.ResepsiDay {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    border-radius: 32px 32px 0px 0px;
+    background: #FFF;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.65);
+}
+
+.PhotoResepsiDay {
+    height: 400px;
+    align-self: stretch;
+    border-radius: 32px 32px 0px 0px;
+    background: var(--ResepsiPhoto) lightgray 50% / cover no-repeat;
+}
+
+.ResepsiDetailsContainer {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    padding: 24px 32px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border: 1px solid #F2C447;
+    background: #FFF;
+}
+
+.ResepsiDetailsContainer .ResepsiDetailsTitle {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(255, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    width: 80px;
+}
+
+.ResepsiDetailsContainer .ResepsiDetailsTitle h1 {
+    transform: rotate(-90deg);
+    color: #5E5E5E;
+    font-family: Urbanist;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.ResepsiDetailsContainer .ResepsiDetails {
+    background: rgba(0, 0, 255, 0);
+    display: flex;
+    padding: 0px 28px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+.ResepsiDetailsContainer .ResepsiDetails .ResepsiDate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.ResepsiDetailsContainer .ResepsiDetails .ResepsiDate p {
+    color: #000;
+    text-align: center;
+    font-family: Urbanist;
+    font-style: normal;
+    line-height: normal;
+}
+
+.ResepsiDetailsContainer .ResepsiDetails .ResepsiTime p {
+    color: #000;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.ResepsiDetailsContainer .ResepsiDetails .ResepsiLocationContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.ResepsiDetailsContainer .ResepsiDetails .ResepsiLocationContainer p {
+    color: #000;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.ResepsiDetailsContainer .ResepsiDetails .ResepsiLocationContainer .ResepsiLocation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    align-self: stretch;
+}
+
+.ResepsiDetailsContainer .ResepsiDetails .ResepsiLocationContainer .ResepsiLocation p {
+    align-self: stretch;
+    color: #000;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.Page5 {
+    display: none;
+    min-width: 320px;
+    max-width: 767px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    background: url(BG3.png) lightgray 50% / cover no-repeat;
+}
+
+.Container5 {
+    display: flex;
+    padding: 50px 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    align-self: stretch;
+    background: rgba(223, 217, 202, 0.1);
+    backdrop-filter: blur(2px);
+}
+
+.BestMoments {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.BestMoments h1 {
+    color: var(--Color-Text-text-primary, #202020);
+    text-align: center;
+    font-family: Maytra;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.28px;
+}
+
+.BestMomentsGallery {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.BestMomentsGallery .GalleryLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    flex: 1 0 0;
+}
+
+.BestMomentsGallery .GalleryRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    flex: 1 0 0;
+}
+
+.BestMomentsPhoto1 {
+    height: 255px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: var(--BestMomentsPhoto1) lightgray 50% / cover no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.BestMomentsPhoto2 {
+    height: 235px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: var(--BestMomentsPhoto2) lightgray 50% / cover no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.BestMomentsPhoto3 {
+    height: 306px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: var(--BestMomentsPhoto3) lightgray 50% / cover no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.BestMomentsPhoto4 {
+    height: 238px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: var(--BestMomentsPhoto4) lightgray 50% / cover no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.BestMomentsPhoto5 {
+    height: 290px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: var(--BestMomentsPhoto5) lightgray 50% / cover no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.BestMomentsPhoto6 {
+    height: 273px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: var(--BestMomentsPhoto6) lightgray 50% / cover no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.BestMomentsPhoto7 {
+    height: 292px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: var(--BestMomentsPhoto7) lightgray 50% / cover no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.BestMomentsPhoto8 {
+    height: 255px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: var(--BestMomentsPhoto8) lightgray 50% / cover no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.Page6 {
+    display: none;
+    min-width: 320px;
+    max-width: 767px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    background: url(BG3.png) lightgray 50% / cover no-repeat;
+}
+
+.Container6 {
+    display: flex;
+    padding: 50px 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    align-self: stretch;
+    background: rgba(223, 217, 202, 0.1);
+    backdrop-filter: blur(2px);
+}
+
+.OuterContainer {
+    display: flex;
+    padding: 24px 24px 100px 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    align-self: stretch;
+    border-radius: 8px;
+    background: url(BG2.png) lightgray 50% / cover no-repeat;
+    box-shadow: 0px 4px 8px 4px rgba(0, 0, 0, 0.25);
+}
+
+.OuterContainer .Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.OuterContainer .Title h1 {
+    color: var(--Color-Text-text-primary, #202020);
+    text-align: center;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.90);
+    font-family: Aboreto;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.96px;
+}
+
+.InnerContainer {
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.70);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.50) inset;
+    backdrop-filter: blur(12px);
+}
+
+.InnerContainer .TextField {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.InnerContainer .TextField p {
+    color: #ffffff;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.InnerContainer .TextField .TextFieldInput {
+    padding: 8px;
+    display: flex;
+    height: 48px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 8px;
+    background: #FFF;
+}
+
+.InnerContainer .Konfirmasi {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.InnerContainer .Konfirmasi p {
+    color: #FFF;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.InnerContainer .Konfirmasi .KonfirmasiOptions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+}
+
+.InnerContainer .Konfirmasi .KonfirmasiOptions .KonfirmasiOption {
+    display: flex;
+    padding: 1px 11px;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    align-content: center;
+}
+
+.InnerContainer .Konfirmasi .KonfirmasiOptions .KonfirmasiOption input {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    gap: 10px;
+}
+
+.InnerContainer .Konfirmasi .KonfirmasiOptions .KonfirmasiOption label {
+    color: var(--Color-Text-text-invert, #FFF);
+    font-family: Urbanist;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.SubmitConfirmation {
+    display: flex;
+    padding: 12px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 8px;
+    border: 2px solid #FFF;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.SubmitConfirmation p {
+    color: #FFF;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.SubmitConfirmation span {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.SubmitConfirmation:hover {
+    background: rgba(255, 255, 255, 0.20);
+}
+
+.Page7 {
+    display: none;
+    height: 100vh;
+    min-width: 320px;
+    max-width: 767px;
+    align-items: center;
+    align-self: stretch;
+    flex-direction: column;
+    background: url(BG1.png) lightgray 50% / cover no-repeat;
+}
+
+.Container7 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    padding: 100px 36px 50px 36px;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    flex: 1 0 0;
+    align-self: stretch;
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(12px);
+}
+
+.Container7 .ClosingPhoto {
+    width: 200px;
+    height: 300px;
+    border-radius: 16px;
+    border: 2px solid #9D7609;
+    background: var(--ClosingPhoto) lightgray 50% / cover no-repeat;
+    box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.30);
+}
+
+.Container7 .Thanks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.Container7 .Thanks h1 {
+    align-self: stretch;
+    color: var(--Color-Text-text-primary, #202020);
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.Container7 .Thanks p {
+    color: var(--Color-Text-text-primary, #202020);
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 137.5% */
+}
+
+.Container7 .Closing {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+}
+
+.Container7 .Closing p {
+    align-self: stretch;
+    color: var(--Color-Text-text-primary, #202020);
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.Container7 .Closing h1 {
+    align-self: stretch;
+    color: #000;
+    text-align: center;
+    font-family: Maytra;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.Footer {
+    display: flex;
+    height: 146px;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    background: rgba(26, 26, 26, 0.70);
+    box-shadow: 0px 0px 50px 10px rgba(255, 255, 255, 0.58) inset;
+    backdrop-filter: blur(10px);
+}
+
+.Footer p {
+    color: #FFF;
+    text-align: center;
+    font-family: Lora;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

@@ -1,0 +1,113 @@
+{% extends "layoutAuthed.html" %}
+
+{% block title %}
+    Upload
+{% endblock %}
+
+{% block ActiveCreate %}{% endblock %}
+{% block ActiveEdit %}{% endblock %}
+{% block ActiveUsers %}{% endblock %}
+{% block ActiveSettings %}{% endblock %}
+
+{% block main %}
+<div style="overflow-y: scroll;" class="d-flex align-self-stretch align-items-center justify-content-center w-100">
+    <form action="/upload/{{ id }}" method="post" enctype="multipart/form-data" class="d-flex flex-column align-self-stretch align-items-start justify-content-center w-100">
+        <div class="d-flex flex-column w-100 h-100 justify-content-start p-3">
+            <div id="fotoopening" class="d-flex gap-3 justify-content-center align-items-center w-100">
+                <div style="border: 1px black solid; border-radius: 16px;" class="mb-3 p-3 w-100">
+                    <div class="d-flex flex-column gap-1 mb-3 w-100">
+                        <h5 class="mb-3">Foto Opening</h5>
+                        <input type="file" id="LeftHalfPhoto" name="LeftHalfPhoto" accept="image/*" onchange="previewImg(this, 'preview_LeftHalfPhoto')">
+                        <div id="preview_LeftHalfPhoto" class="preview"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="fotomempelai" class="d-flex gap-3 justify-content-center align-items-center w-100">
+                <div id="fotomempelaipria" style="border: 1px black solid; border-radius: 16px;" class="mb-3 p-3 w-100">
+                    <div class="d-flex flex-column gap-1 mb-3 w-100">
+                        <h5 class="mb-3">Foto Mempelai Pria</h5>
+                        <input type="file" id="GroomPhoto" name="GroomPhoto" accept="image/*" onchange="previewImg(this, 'preview_GroomPhoto')">
+                        <div id="preview_GroomPhoto" class="preview"></div>
+                    </div>
+                </div>
+                <div id="fotomempelaiwanita" style="border: 1px black solid; border-radius: 16px;" class="mb-3 p-3 w-100">
+                    <div  class="d-flex flex-column gap-1 mb-3 w-100">
+                        <h5 class="mb-3">Foto Mempelai Wanita</h5>
+                        <input type="file" id="BridePhoto" name="BridePhoto" accept="image/*" onchange="previewImg(this, 'preview_BridePhoto')">
+                        <div id="preview_BridePhoto" class="preview"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="fotoacara" class="d-flex gap-3 justify-content-center align-items-center w-100">
+                <div id="fotoakad" style="border: 1px black solid; border-radius: 16px;" class="mb-3 p-3 w-100">
+                    <div class="d-flex flex-column gap-1 mb-3 w-100">
+                        <h5 class="mb-3">Foto Akad</h5>
+                        <input type="file" id="AkadPhoto" name="AkadPhoto" accept="image/*" onchange="previewImg(this, 'preview_AkadPhoto')">
+                        <div id="preview_AkadPhoto" class="preview"></div>
+                    </div>
+                </div>
+                <div id="fotoresepsi" style="border: 1px black solid; border-radius: 16px;" class="mb-3 p-3 w-100">
+                    <div  class="d-flex flex-column gap-1 mb-3 w-100">
+                        <h5 class="mb-3">Foto Resepsi</h5>
+                        <input type="file" id="ResepsiPhoto" name="ResepsiPhoto" accept="image/*" onchange="previewImg(this, 'preview_ResepsiPhoto')">
+                        <div id="preview_ResepsiPhoto" class="preview"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="fotobestmoment" class="d-flex gap-3 justify-content-center align-items-center w-100">
+                <div style="border: 1px black solid; border-radius: 16px;" class="mb-3 p-3 w-100">
+                    <div class="d-flex flex-column gap-1 mb-3 w-100">
+                        <h5 class="mb-3">Foto Best Moments</h5>
+                        <p>Select up to 8 images.</p>
+                        <input type="file" id="BestMoments" name="BestMoments" multiple accept="image/*" onchange="previewMultipleImages()">
+                        <div id="preview_BestMoments" class="preview"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="fotoclosing" class="d-flex gap-3 justify-content-center align-items-center w-100">
+                <div style="border: 1px black solid; border-radius: 16px;" class="mb-3 p-3 w-100">
+                    <div class="d-flex flex-column gap-1 mb-3 w-100">
+                        <h5 class="mb-3">Foto Closing</h5>
+                        <input type="file" id="ClosingPhoto" name="ClosingPhoto" accept="image/*" onchange="previewImg(this, 'preview_ClosingPhoto')">
+                        <div id="preview_ClosingPhoto" class="preview"></div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Upload All Images</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{%block additionalscript %}
+<script>
+    // Preview function for single image inputs.
+    function previewImg(input, previewId) {
+      var preview = document.getElementById(previewId);
+      preview.innerHTML = "";
+      if (input.files && input.files[0]) {
+        var img = document.createElement("img");
+        img.src = URL.createObjectURL(input.files[0]);
+        preview.appendChild(img);
+      }
+    }
+
+    // Preview function for the BestMoments multiple file input.
+    function previewMultipleImages() {
+      var input = document.getElementById("BestMoments");
+      var preview = document.getElementById("preview_BestMoments");
+      preview.innerHTML = "";
+      var files = input.files;
+      // Only preview up to 8 images.
+      for (var i = 0; i < files.length && i < 8; i++) {
+        var img = document.createElement("img");
+        img.src = URL.createObjectURL(files[i]);
+        preview.appendChild(img);
+      }
+    }
+  </script>
+{% endblock %}

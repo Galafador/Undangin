@@ -1,0 +1,11 @@
+os
+shutil
+locale
+cs50 
+flask
+flask_session
+werkzeug.security
+werkzeug.utils
+datetime
+urllib.parse
+functools

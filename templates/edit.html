@@ -1,0 +1,77 @@
+{% extends "layoutAuthed.html" %}
+
+{% block title %}
+    Events List
+{% endblock %}
+
+{% block ActiveCreate %}{% endblock %}
+{% block ActiveEdit %} Active {% endblock %}
+{% block ActiveUsers %}{% endblock %}
+{% block ActiveSettings %}{% endblock %}
+
+{% block main %}
+    <div class="d-flex flex-column w-100 h-100 justify-content-start p-3">
+        <table class="table table-striped text-center">
+            <tr>
+                <th>Nama Event</th>
+                <th>Mempelai Pria</th>
+                <th>Mempelai Wanita</th>
+                <th>Tanggal Akad</th>
+                <th colspan="4">Options</th>
+            </tr>
+            {% for event in events %}
+            <tr>
+                <td>{{ event.namaevent }}</td>
+                <td>{{ event.mempelaipria }}</td>
+                <td>{{ event.mempelaiwanita }}</td>
+                <td>{{ event.tanggalAkad }}</td>
+                <td><a href="/undangan/{{ event.namaevent }}" class="btn btn-primary">Link</a></td>
+                <td><a href="/upload/{{ event.id }}" class="btn btn-dark">Upload</a></td>
+                <td><a href="/editing/{{ event.id }}" class="btn btn-secondary">Edit</a></td>
+                <td><a href="#" class="btn btn-danger confirm-link" data-id="{{ event.id }}" data-toggle="modal" data-target="#confirmModal">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirm Deletion</h5>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this event?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="dismissModal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmDelete">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block additionalscript %}
+<script>
+    $(document).ready(function() {
+        let eventId = '';
+
+        $('.confirm-link').click(function(event) {
+            event.preventDefault(); // Prevent default link action
+            eventId = $(this).data('id'); // Store the event ID
+            $('#confirmModal').modal('show'); // Show the modal
+        });
+
+        $('#confirmDelete').click(function() {
+            window.location.href = '/delete/' + eventId; // Redirect to the delete URL with the event ID
+            $('#confirmModal').modal('hide'); // Hide the modal
+        });
+
+        $('#dismissModal').click(function() {
+            $('#confirmModal').modal('hide'); // Hide the modal
+        });
+    });
+</script>
+{% endblock %}

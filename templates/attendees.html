@@ -1,0 +1,25 @@
+{% extends "layoutAuthed.html" %}
+
+{% block title %}
+    Attendees List
+{% endblock %}
+
+{% block ActiveSend %}{% endblock %}
+{% block ActiveAttendees %}Active{% endblock %}
+
+{% block main %}
+    <div class="d-flex flex-column w-100 h-100 justify-content-start p-3">
+        <table class="table table-striped text-center">
+            <tr>
+                <th>Nama</th>
+                <th>Kehadiran</th>
+            </tr>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row.nama }}</td>
+                <td>{{ row.kehadiran }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

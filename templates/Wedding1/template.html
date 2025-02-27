@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Wedding of {{ event.panggilanwanita }} & {{ event.panggilanpria }}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --LeftHalfPhoto: url('/static/uploads/{{ event.id }}/LeftHalfPhoto.png');
+            --BridePhoto: url('/static/uploads/{{ event.id }}/BridePhoto.png');
+            --GroomPhoto: url('/static/uploads/{{ event.id }}/GroomPhoto.png');
+            --AkadPhoto: url('/static/uploads/{{ event.id }}/AkadPhoto.png');
+            --ResepsiPhoto: url('/static/uploads/{{ event.id }}/ResepsiPhoto.png');
+            --BestMomentsPhoto1: url('/static/uploads/{{ event.id }}/BestMomentsPhoto1.png');
+            --BestMomentsPhoto2: url('/static/uploads/{{ event.id }}/BestMomentsPhoto2.png');
+            --BestMomentsPhoto3: url('/static/uploads/{{ event.id }}/BestMomentsPhoto3.png');
+            --BestMomentsPhoto4: url('/static/uploads/{{ event.id }}/BestMomentsPhoto4.png');
+            --BestMomentsPhoto5: url('/static/uploads/{{ event.id }}/BestMomentsPhoto5.png');
+            --BestMomentsPhoto6: url('/static/uploads/{{ event.id }}/BestMomentsPhoto6.png');
+            --BestMomentsPhoto7: url('/static/uploads/{{ event.id }}/BestMomentsPhoto7.png');
+            --BestMomentsPhoto8: url('/static/uploads/{{ event.id }}/BestMomentsPhoto8.png');
+            --ClosingPhoto: url('/static/uploads/{{ event.id }}/ClosingPhoto.png');
+        }
+    </style>
+
+    <link rel="stylesheet" href="{{ url_for('wedding_static', template_num=1, filename='templatestyle.css') }}">
+</head>
+<body>
+    <div id="Page1" class="Page1">
+        <div class="Container1">
+            <div class="TheWeddingOf animatedStartY">
+                <p>The Wedding Of</p>
+            </div>
+            <div class="Initials animatedStartY">
+                <div class="InitialsTop">
+                    <p>{{ inisialwanita }}</p>
+                    <div class="Spacer"></div>
+                </div>
+                <div class="InitialsBottom">
+                    <div class="Spacer"></div>
+                    <p>{{ inisialpria }}</p>
+                </div>
+            </div>
+            <button class="animatedStartY" style="width: 220px; height: 44px; padding-left: 18px; padding-right: 18px; padding-top: 10px; padding-bottom: 10px; background: #202020; box-shadow: 0px 0px 24.100000381469727px 2px rgba(0, 0, 0, 0.22); border-radius: 24px; overflow: hidden; border: 2px white solid; justify-content: center; align-items: center; gap: 8px; display: inline-flex" onclick="scrollToContent()">
+                    <div style="width: 24px; height: 24px; padding-top: 3px; padding-bottom: 3px; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
+                        <img style="width: 21px; height: 16px" src="{{ url_for('wedding_static', template_num=1, filename='letter.png') }}"/>
+                    </div>
+                    <div style="justify-content: center; align-items: center; gap: 10px; display: flex">
+                        <div style="color: white; font-size: 20px; font-family: Lora; font-weight: 500; word-wrap: break-word">Open Invitation</div>
+                    </div>
+            </button>
+        </div>
+    </div>
+    <div id="FullWidth" class="FullWidth">
+        <div id="LeftHalf" class="LeftHalf">
+            <div id="LeftContainer" class="LeftContainer">
+                <p style="align-self: stretch; color: #FFF; font-family: Lora;font-size: 32px;font-style: normal;font-weight: 500;line-height: normal;">OUR WEDDING INVITATION</p>
+                <p style="align-self: stretch; color: #FFF;font-family: Urbanist;font-size: 76px;font-style: normal;font-weight: 500;line-height: normal;">{{ event.panggilanwanita }} & {{ event.panggilanpria }}</p>
+                <p style="align-self: stretch; color: #FFF;font-family: Lora;font-size: 16px;font-style: normal;font-weight: 500;line-height: normal; ">“What counts in making a happy marriage is not so much how compatible you are, but how you deal with incompatibility. A great marriage is not when the perfect couple comes together. It is when an imperfect couple learns to enjoy their differences.”</p>
+                {% if kepada %}
+                <p style="align-self: stretch; color: #FFF;font-family: Lora;font-size: 20px;font-style: normal;font-weight: 500;line-height: normal;">Kepada Yth. Bapak / Ibu /Saudara/i</p>
+                <p style="align-self: stretch; color: #FFF;font-family: Lora;font-size: 32px;font-style: normal;font-weight: 500;line-height: normal;">{{ kepada }}</p>
+                {% else %}
+                {% endif %}
+            </div>
+        </div>
+        <div id="RightHalf" class="RightHalf">
+            <div id="Page2" class="Page2">
+                <div class="Container2">
+                    <div class="TheWeddingOf">
+                        <p class="animatedBotY">The Wedding Of</p>
+                    </div>
+                    <div class="Name animatedBotY">
+                        <p>{{ event.panggilanwanita }}</p>
+                        <p>&</p>
+                        <p>{{ event.panggilanpria }}</p>
+                    </div>
+                    <div class="Date animatedBotY">
+                        <p>{{ hariAkad }}, {{ dayAkad }} {{ monthAkad }} {{ yearAkad }}</p>
+                    </div>
+                </div>
+            </div>
+            <div id="Page3" class="Page3">
+                <div class="Container3">
+                    <div class="Opening">
+                        <h1 class="animatedBotY">Assalamualaikum Wr. Wb.</h1>
+                        <p class="animatedBotY">Dengan menyebut rahmat dan ridho Allah Subhanahu Wa Ta’ala, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri Akad & Resepsi Pernikahan kami.</p>
+                    </div>
+                    <div class="TheBride">
+                        <div class="PhotoAndTitle">
+                            <p style="opacity: 0">The Bride</p>
+                            <div class="BridePhoto animatedBotY"></div>
+                            <p class="animatedLeftX">The Bride</p>
+                        </div>
+                        <div class="BridesName">
+                            <p class="animatedBotY">{{ event.mempelaiwanita }}</p>
+                        </div>
+                        <div class="BridesDetails animatedBotY">
+                            <p>{{ event.putrike }}</p>
+                            <div class="BridesParents">
+                                <p>{{ event.ayahmempelaiwanita }}</p>
+                                <p>&</p>
+                                <p>{{ event.ibumempelaiwanita }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-svg-wrapper>
+                        <svg  class="animatedBotY" width="240" height="24" viewBox="0 0 240 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_24_125)">
+                                <path d="M0 12H92" stroke="black"/>
+                                <path d="M119.999 22.2262L109.975 12.7723C109.308 12.1354 108.786 11.3613 108.447 10.5034C108.108 9.64548 107.959 8.72417 108.01 7.80301C108.061 6.88186 108.312 5.98279 108.744 5.16783C109.176 4.35286 109.781 3.64141 110.515 3.08254C111.249 2.52366 112.095 2.13068 112.996 1.93069C113.896 1.7307 114.83 1.72846 115.731 1.92414C116.633 2.11982 117.481 2.50875 118.218 3.0641C118.955 3.61946 119.562 4.32802 119.999 5.1409C120.431 4.33315 121.033 3.62808 121.762 3.07368C122.492 2.51928 123.332 2.12857 124.226 1.92814C125.12 1.72772 126.047 1.72228 126.944 1.9122C127.84 2.10212 128.685 2.48293 129.421 3.02873C130.157 3.57453 130.767 4.27249 131.209 5.07511C131.651 5.87773 131.915 6.76616 131.982 7.67994C132.05 8.59371 131.921 9.51138 131.602 10.3705C131.283 11.2296 130.783 12.0099 130.136 12.6584L119.999 22.2262Z" stroke="#202020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M148 12H240" stroke="black"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_24_125">
+                                    <rect width="240" height="24" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="TheGroom">
+                        <div class="PhotoAndTitle">
+                            <p class="animatedRightX">The Groom</p>
+                            <div class="GroomPhoto animatedBotY"></div>
+                            <p style="opacity: 0;">The Groom</p>
+                        </div>
+                        <div class="GroomsName">
+                            <p class="animatedBotY">{{ event.mempelaipria }}</p>
+                        </div>
+                        <div class="GroomsDetails animatedBotY">
+                            <p>{{ event.putrake }}</p>
+                            <div class="GroomsParents">
+                                <p>{{ event.ayahmempelaipria }}</p>
+                                <p>&</p>
+                                <p>{{ event.ibumempelaipria }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="Page4" class="Page4">
+                <div class="Container4">
+                    <div class="AkadDay animatedBotY">
+                        <div class="PhotoAkadDay"></div>
+                        <div class="AkadDetailsContainer">
+                            <div class="AkadDetailsTitle">
+                                <h1>Akad Nikah</h1>
+                            </div>
+                            <div class="AkadDetails">
+                                <div class="AkadDate">
+                                    <p style="font-size: 24px; font-weight: 500;">{{ hariAkad }}</p>
+                                    <p style="font-size: 40px; font-weight: 600;">{{ dayAkad }}</p>
+                                    <p style="font-size: 24px; font-weight: 500;">{{ monthAkad }} {{ yearAkad }}</p>
+                                </div>
+                                <div class="AkadTime">
+                                    <p>{{ event.jamAkad }}</p>
+                                </div>
+                                <div class="AkadLocationContainer">
+                                    <p>Bertempat Di</p>
+                                    <div class="AkadLocation">
+                                        <p>{{ event.alamat1Akad }}</p>
+                                        <p>{{ event.alamat2Akad }}</p>
+                                    </div>
+                                </div>
+                                <a href="{{ event.linkMapsAkad }}" style="width: 77px; height: 25px; padding-left: 8px; padding-right: 8px; padding-top: 4px; padding-bottom: 4px; background: black; border-radius: 4px; overflow: hidden; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+                                    <div data-svg-wrapper>
+                                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_24_163)">
+                                    <g clip-path="url(#clip1_24_163)">
+                                    <path d="M10.5 4.40236L6.5 1.72964V11.9624L10.5 14.6351V4.40236ZM11.5 14.6351L16.287 11.4374C16.3529 11.3933 16.4066 11.3347 16.4437 11.2666C16.4808 11.1984 16.5001 11.1228 16.5 11.046V1.97782C16.5001 1.89044 16.4751 1.80471 16.4276 1.72997C16.3802 1.65524 16.3122 1.59437 16.231 1.554C16.1498 1.51362 16.0586 1.4953 15.9672 1.50103C15.8759 1.50675 15.788 1.5363 15.713 1.58646L11.5 4.40236V14.6351ZM0.713 4.92736L5.5 1.72964V11.9624L1.287 14.7783C1.21204 14.8284 1.1241 14.858 1.03275 14.8637C0.941408 14.8694 0.850171 14.8511 0.768987 14.8107C0.687802 14.7704 0.619787 14.7095 0.572355 14.6348C0.524923 14.56 0.499895 14.4743 0.5 14.3869V5.31873C0.499908 5.24195 0.519222 5.16629 0.556303 5.09815C0.593384 5.03002 0.647137 4.97143 0.713 4.92736Z" fill="white"/>
+                                    </g>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_24_163">
+                                    <rect width="16" height="16" fill="white" transform="translate(0.5 0.5)"/>
+                                    </clipPath>
+                                    <clipPath id="clip1_24_163">
+                                    <rect width="16" height="14" fill="white" transform="translate(0.5 1.5)"/>
+                                    </clipPath>
+                                    </defs>
+                                    </svg>
+                                    </div>
+                                    <div style="text-align: center; color: white; font-size: 14px; font-family: Urbanist; font-weight: 400; word-wrap: break-word">Maps</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ResepsiDay animatedBotY">
+                        <div class="PhotoResepsiDay"></div>
+                        <div class="ResepsiDetailsContainer">
+                            <div class="ResepsiDetails">
+                                <div class="ResepsiDate">
+                                    <p style="font-size: 24px; font-weight: 500;">{{ hariResepsi }}</p>
+                                    <p style="font-size: 40px; font-weight: 600;">{{ dayResepsi }}</p>
+                                    <p style="font-size: 24px; font-weight: 500;">{{ monthResepsi }} {{ yearResepsi }}</p>
+                                </div>
+                                <div class="ResepsiTime">
+                                    <p>{{ event.jamResepsi }}</p>
+                                </div>
+                                <div class="ResepsiLocationContainer">
+                                    <p>Bertempat Di</p>
+                                    <div class="ResepsiLocation">
+                                        <p>{{ event.alamat1Resepsi }}</p>
+                                        <p>{{ event.alamat2Resepsi }}</p>
+                                    </div>
+                                </div>
+                                <a href="{{ event.linkMapsResepsi }}" style="width: 77px; height: 25px; padding-left: 8px; padding-right: 8px; padding-top: 4px; padding-bottom: 4px; background: black; border-radius: 4px; overflow: hidden; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+                                    <div data-svg-wrapper>
+                                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_24_163)">
+                                    <g clip-path="url(#clip1_24_163)">
+                                    <path d="M10.5 4.40236L6.5 1.72964V11.9624L10.5 14.6351V4.40236ZM11.5 14.6351L16.287 11.4374C16.3529 11.3933 16.4066 11.3347 16.4437 11.2666C16.4808 11.1984 16.5001 11.1228 16.5 11.046V1.97782C16.5001 1.89044 16.4751 1.80471 16.4276 1.72997C16.3802 1.65524 16.3122 1.59437 16.231 1.554C16.1498 1.51362 16.0586 1.4953 15.9672 1.50103C15.8759 1.50675 15.788 1.5363 15.713 1.58646L11.5 4.40236V14.6351ZM0.713 4.92736L5.5 1.72964V11.9624L1.287 14.7783C1.21204 14.8284 1.1241 14.858 1.03275 14.8637C0.941408 14.8694 0.850171 14.8511 0.768987 14.8107C0.687802 14.7704 0.619787 14.7095 0.572355 14.6348C0.524923 14.56 0.499895 14.4743 0.5 14.3869V5.31873C0.499908 5.24195 0.519222 5.16629 0.556303 5.09815C0.593384 5.03002 0.647137 4.97143 0.713 4.92736Z" fill="white"/>
+                                    </g>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_24_163">
+                                    <rect width="16" height="16" fill="white" transform="translate(0.5 0.5)"/>
+                                    </clipPath>
+                                    <clipPath id="clip1_24_163">
+                                    <rect width="16" height="14" fill="white" transform="translate(0.5 1.5)"/>
+                                    </clipPath>
+                                    </defs>
+                                    </svg>
+                                    </div>
+                                    <div style="text-align: center; color: white; font-size: 14px; font-family: Urbanist; font-weight: 400; word-wrap: break-word">Maps</div>
+                                </a>
+                            </div>
+                            <div class="ResepsiDetailsTitle">
+                                <h1>Resepsi</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="Page5" class="Page5">
+                <div class="Container5">
+                    <div class="BestMoments">
+                        <h1 animatedBotY>Best Moments</h1>
+                    </div>
+                    <div class="BestMomentsGallery">
+                        <div class="GalleryLeft">
+                            <div class="BestMomentsPhoto1 animatedBotY"></div>
+                            <div class="BestMomentsPhoto2 animatedBotY"></div>
+                            <div class="BestMomentsPhoto3 animatedBotY"></div>
+                            <div class="BestMomentsPhoto4 animatedBotY"></div>
+                        </div>
+                        <div class="GalleryRight">
+                            <div class="BestMomentsPhoto5 animatedBotY"></div>
+                            <div class="BestMomentsPhoto6 animatedBotY"></div>
+                            <div class="BestMomentsPhoto7 animatedBotY"></div>
+                            <div class="BestMomentsPhoto8 animatedBotY"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="Page6" class="Page6">
+                <div class="Container6">
+                    <div class="OuterContainer animatedBotY">
+                        <div class="Title">
+                            <h1 class="animatedBotY">RSVP</h1>
+                        </div>
+                        <form action="/undangan/{{ namaevent }}" method="post" class="InnerContainer animatedBotY">
+                            <div class="TextField">
+                                <p>Nama</p>
+                                <input class="TextFieldInput" type="text" name="KonfirmasiNama" placeholder="Nama Anda"/>
+                            </div>
+                            <div class="Konfirmasi">
+                                <p>Konfirmasi Kehadiran</p>
+                                <div class="KonfirmasiOptions">
+                                    <div class="KonfirmasiOption">
+                                        <input type="radio" id="Hadir" name="KonfirmasiKehadiran" value="Hadir"/>
+                                        <label for="Hadir">Iya, Saya akan Datang</label>
+                                    </div>
+                                    <div class="KonfirmasiOption">
+                                        <input type="radio" id="Ragu" name="KonfirmasiKehadiran" value="Masih Ragu"/>
+                                        <label for="Hadir">Saya Masih Ragu</label>
+                                    </div>
+                                    <div class="KonfirmasiOption">
+                                        <input type="radio" id="TidakHadir" name="KonfirmasiKehadiran" value="Tidak Hadir"/>
+                                        <label for="TidakHadir">Maaf, Saya Tidak Bisa Datang</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <Button type="submit" class="SubmitConfirmation">
+                                <p>Konfirmasi</p>
+                                <span style="width: 20px; height: 20px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M10 1.25C8.26942 1.25 6.57769 1.76318 5.13876 2.72464C3.69983 3.6861 2.57832 5.05267 1.91606 6.65152C1.25379 8.25037 1.08051 10.0097 1.41813 11.707C1.75575 13.4044 2.58911 14.9635 3.81282 16.1872C5.03653 17.4109 6.59563 18.2443 8.29296 18.5819C9.9903 18.9195 11.7496 18.7462 13.3485 18.0839C14.9473 17.4217 16.3139 16.3002 17.2754 14.8612C18.2368 13.4223 18.75 11.7306 18.75 10C18.75 7.67936 17.8281 5.45376 16.1872 3.81282C14.5462 2.17187 12.3206 1.25 10 1.25ZM8.75 13.4938L5.625 10.3688L6.61875 9.375L8.75 11.5062L13.3813 6.875L14.3788 7.86625L8.75 13.4938Z" fill="white"/>
+                                    </svg>
+                                </span>
+                            </Button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="Page7" class="Page7">
+                <div class="Container7">
+                    <div class="ClosingPhoto animatedBotY"></div>
+                    <div class="Thanks animatedBotY">
+                        <h1>Terima Kasih</h1>
+                        <p>Merupakan suatu kebahagiaan bagi kami jika Bapak/Ibu/Saudara(i) berkenan untuk menghadiri acara pernikahan kami</p>
+                    </div>
+                    <div class="Closing animatedBotY">
+                        <p>Wassalamualaikum Wr. Wb.</p>
+                        <h1>{{ event.panggilanwanita }} & {{ event.panggilanpria }}</h1>
+                        <p>{{ hariAkad }}, {{ dayAkad }} {{ monthAkad }} {{ yearAkad }}</p>
+                    </div>
+                </div>
+                <div class="Footer">
+                    <p>Made by AlphaArietis Studio</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
+    <script src="{{ url_for('wedding_static', template_num=1, filename='templatescript.js') }}"></script>
+</body>
+</html>

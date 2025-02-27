@@ -1,0 +1,28 @@
+{% extends "layoutAuthed.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <div class="m-3 p-3 h-100 w-100">
+        <table class="table table-striped">
+            <tr>
+                <th>Nama Event</th>
+                <th>Mempelai Pria</th>
+                <th>Mempelai Wanita</th>
+                <th>Tanggal Akad</th>
+                <th>Opsi</th>
+            </tr>
+            {% for event in events %}
+            <tr>
+                <td>{{ event.namaevent }}</td>
+                <td>{{ event.mempelaipria }}</td>
+                <td>{{ event.mempelaiwanita }}</td>
+                <td>{{ event.tanggalAkad }}</td>
+                <td><a href="/undangan/{{ event.namaevent }}" class="btn btn-primary">Link</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

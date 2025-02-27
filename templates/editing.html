@@ -1,0 +1,71 @@
+{% extends "layoutAuthed.html" %}
+
+{% block title %}
+    Edit Event
+{% endblock %}
+
+{% block main %}
+<div style="overflow-y: scroll;" class="d-flex align-self-stretch align-items-center justify-content-center w-100">
+  <form action="/editing/{{ event.id }}" method="post" class="d-flex flex-column align-self-stretch align-items-center justify-content-start w-75">
+      <div class="d-flex flex-column align-self-stretch w-100">
+          <div class="mb-4 mt-3">
+              <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInputNamaID"  name="namaevent" placeholder="Input Event ID" value="{{ event.namaevent }}" required>
+                  <label for="floatingInput">Input Event ID</label>
+                  <div id="EventIDHelpBlock" class="form-text">
+                      example: baz-qux [Event ID is used to identify the event. It should be unique.]
+                    </div>
+              </div>
+          </div>
+          <div id="datamempelai" class="d-flex gap-3 justify-content-center align-items-center w-100">
+              <div id="datamempelaipria" style="border: 1px black solid; border-radius: 16px;" class="mb-3 p-3 w-100">
+                  <div class="d-flex flex-column gap-1 mb-3 w-100">
+                      <h5 class="mb-3">Mempelai Pria</h5>
+                      <input autocomplete="off" class="form-control" name="mempelaipria" placeholder="Input Nama Lengkap Mempelai Pria" type="text" value="{{ event.mempelaipria }}" required>
+                      <input autocomplete="off" class="form-control" name="panggilanpria" placeholder="Input Nama Panggilan Mempelai Pria" type="text" value="{{ event.panggilanpria }}" required>
+                      <input autocomplete="off" class="form-control" name="putrake" placeholder="Putra ke... Dari" type="text" value="{{ event.putrake }}" required>
+                  </div>
+                  <div class="d-flex flex-column gap-1 mb-3 w-100">
+                      <input autocomplete="off" class="form-control" name="ayahmempelaipria" placeholder="Bapak ...." type="text" value="{{ event.ayahmempelaipria }}" required>
+                      <input autocomplete="off" class="form-control" name="ibumempelaipria" placeholder="Ibu ...." type="text" value="{{ event.ibumempelaipria }}" required>
+                  </div>
+              </div>
+              <div id="datamempelaiwanita" style="border: 1px black solid; border-radius: 16px;" class="mb-3 p-3 w-100">
+                  <div  class="d-flex flex-column gap-1 mb-3 w-100">
+                      <h5 class="mb-3">Mempelai Wanita</h5>
+                      <input autocomplete="off" class="form-control" name="mempelaiwanita" placeholder="Input Nama Lengkap Mempelai Wanita" type="text" value="{{ event.mempelaiwanita }}" required>
+                      <input autocomplete="off" class="form-control" name="panggilanwanita" placeholder="Input Nama Panggilan Mempelai Wanita" type="text" value="{{ event.panggilanwanita }}" required>
+                      <input autocomplete="off" class="form-control" name="putrike" placeholder="Putri ke... Dari" type="text" value="{{ event.putrike }}" required> 
+                  </div>
+                  <div class="d-flex flex-column gap-1 mb-3 w-100">
+                      <input autocomplete="off" class="form-control" name="ayahmempelaiwanita" placeholder="Bapak ...." type="text" value="{{ event.ayahmempelaiwanita }}" required>
+                      <input autocomplete="off" class="form-control" name="ibumempelaiwanita" placeholder="Ibu ...." type="text" value="{{ event.ibumempelaiwanita }}" required>
+                  </div>
+              </div>
+          </div>
+          
+          <div id="dataacara" class="d-flex gap-3 justify-content-center align-items-center w-100 mb-4">
+              <div style="border: 1px black solid; border-radius: 16px;"  class="d-flex flex-column gap-1 mb-3 p-3 w-100">
+                  <h5>Akad</h5>
+                  <input type="date" class="form-control" id="tanggalAkad" name="tanggalAkad" value="{{ event.tanggalAkad }}" required>
+                  <input autocomplete="off" class="form-control" name="jamAkad" placeholder="09.00 WIB" type="text" value="{{ event.jamAkad }}" required>
+                  <input autocomplete="off" class="form-control" name="alamat1Akad" placeholder="Alamat 1" type="text" value="{{ event.alamat1Akad }}" required>
+                  <input autocomplete="off" class="form-control" name="alamat2Akad" placeholder="Alamat 2" type="text" value="{{ event.alamat2Akad }}" required>
+                  <input autocomplete="off" class="form-control" name="linkMapsAkad" placeholder="Google Maps Link" type="text" value="{{ event.linkMapsAkad }}" required>
+              </div>
+
+              <div style="border: 1px black solid; border-radius: 16px;"  class="d-flex flex-column gap-1 mb-3 p-3 w-100">
+                  <h5>Resepsi</h5>
+                  <input type="date" class="form-control" id="tanggalResepsi" name="tanggalResepsi" value="{{ event.tanggalResepsi }}" required>
+                  <input autocomplete="off" class="form-control" name="jamResepsi" placeholder="09.00 WIB" type="text" value="{{ event.jamResepsi }}" required>
+                  <input autocomplete="off" class="form-control" name="alamat1Resepsi" placeholder="Alamat 1" type="text" value="{{ event.alamat1Resepsi }}" required>
+                  <input autocomplete="off" class="form-control" name="alamat2Resepsi" placeholder="Alamat 2" type="text" value="{{ event.alamat2Resepsi }}" required>
+                  <input autocomplete="off" class="form-control" name="linkMapsResepsi" placeholder="Google Maps Link" type="text" value="{{ event.linkMapsResepsi }}" required>
+              </div>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Edit Event</button>
+      </div>
+  </form>
+</div>
+{% endblock %}
