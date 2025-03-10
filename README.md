@@ -46,7 +46,7 @@ The flow for creating an invitation page should look like this:
 ![Sign-in Screenshot](https://i.imgur.com/hAaOd1M.png) 
 ![Create Event Screenshot](https://i.imgur.com/ZUrx8Ee.png)
 ![Invitation Screenshot](https://i.imgur.com/tFm3QIx.png)
-
+![Responsive Design Screenshot](https://i.imgur.com/2G6ZpmG.png)
 
 
 
