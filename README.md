@@ -3,7 +3,7 @@
 
 Tech stack: `Python, Flask, SQLite, HTML, CSS, Javascript, Whimsical, Figma.`
 
-video demonstration:
+video demonstration: https://www.youtube.com/watch?v=QyoxQupGN0g (sorry for the very low volume)
 
 ## Overview
 Undangin is a web application for creating online wedding invitations.
